@@ -1,12 +1,20 @@
-﻿<Window x:Class="Joshua_Gonzales___IST331___Dog_Adoption.MainWindow"
+﻿<Window x:Name="wnMainWindow" x:Class="Joshua_Gonzales___IST331___Dog_Adoption.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Joshua_Gonzales___IST331___Dog_Adoption"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Gonzales_DogAdoption" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
+        <Grid.Background>
+            <ImageBrush x:Name="imgbrushBackground" ImageSource="/Background.jpg" Opacity="0.3"/>
+        </Grid.Background>
+        <Image x:Name="imgDogProfile" HorizontalAlignment="Left" Height="191" Margin="526,63,0,0" VerticalAlignment="Top" Width="239"/>
+        <TextBox x:Name="txtDogName" HorizontalAlignment="Left" Height="40" Margin="10,76,0,0" TextWrapping="Wrap" Text="Dog's Name" VerticalAlignment="Top" Width="204" FontSize="24" TextAlignment="Center" Focusable="False" FontFamily="Elephant" IsHitTestVisible="False" IsUndoEnabled="False"/>
+        <Button x:Name="btnExit" Content="Exit..." HorizontalAlignment="Left" Height="46" Margin="630,350,0,0" VerticalAlignment="Top" Width="130" Click="btnExit_Click"/>
+        <Button x:Name="btnAdopt" Content="Adopt..." HorizontalAlignment="Left" Height="46" Margin="448,350,0,0" VerticalAlignment="Top" Width="130" Click="btnAdopt_Click"/>
+        <Label x:Name="lblTitle" Content="       Dog Adoption" HorizontalAlignment="Left" Height="53" Margin="228,10,0,0" VerticalAlignment="Top" Width="350" FontSize="30"/>
 
     </Grid>
 </Window>

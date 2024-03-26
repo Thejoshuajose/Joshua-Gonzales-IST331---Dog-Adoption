@@ -20,5 +20,19 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
         {
             InitializeComponent();
         }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Are you Sure?", "Do you want to Exit?", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();
+            }
+        }
+
+        private void btnAdopt_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
