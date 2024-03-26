@@ -24,10 +24,21 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
             this.dogName = "Dog";
         }
 
-        public Dog(DateTime dogBirthday,)
+        public Dog(DateTime dogBirthday,string dogName, string dogType, string dogDescription, int dogAge, int dogWeight)
         {
-
+            this.dogType = dogType;
+            this.dogDescription = dogDescription;
+            this.dogAge = dogAge;
+            this.dogWeight = dogWeight;
+            this.dogBirthday = dogBirthday;
+            this.dogName = dogName;
         }
+
+        public Dog(DateTime dogBirthday, string dogName, string dogType,string dogDescription,int dogWeight)
+        {
+             
+        }
+
 
     }
 }
