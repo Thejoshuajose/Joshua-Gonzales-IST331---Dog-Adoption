@@ -8,7 +8,7 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
 {
     class Dog
     {
-        protected DateTime dogBirthday;
+        protected DateOnly dogBirthday;
         protected string dogName;
         protected string dogType;
         protected string dogDescription;
@@ -20,11 +20,11 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
             this.dogDescription = "A generic Dog";
             this.dogAge = 1;
             this.dogWeight = 20;
-            this.dogBirthday = DateTime.Now.Date;
+            this.dogBirthday = DateOnly.MaxValue;
             this.dogName = "Dog";
         }
 
-        public Dog(DateTime dogBirthday,string dogName, string dogType, string dogDescription, int dogAge, int dogWeight)
+        public Dog(DateOnly dogBirthday,string dogName, string dogType, string dogDescription, int dogAge, int dogWeight)
         {
             this.dogType = dogType;
             this.dogDescription = dogDescription;
@@ -34,7 +34,7 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
             this.dogName = dogName;
         }
 
-        public Dog(DateTime dogBirthday, string dogName, string dogType,string dogDescription,int dogWeight)
+        public Dog(DateOnly dogBirthday, string dogName, string dogType,string dogDescription,int dogWeight)
         {
              
         }

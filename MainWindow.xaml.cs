@@ -18,6 +18,14 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
     public partial class MainWindow : Window
     {
         List<string> dogList = new List<string>();
+        List<string> dogNames = new List<string>();
+        List<string> dogTypes = new List<string>();
+        List<int> dogAge = new List<int>();
+        List<int> dogWeight = new List<int>();
+        List<DateOnly> dogBirthdays = new List<DateOnly>();
+        List<string> dogDesc = new List<string>();
+        List<String> dogImgPath = new List<String>();
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -43,9 +51,28 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
                 while (line != null)
                 {
                     dogList.Add(line);
+                    dogNames.Add(line.Split(',')[0].Trim());
+                    dogTypes.Add(line.Split(',')[1].Trim());
+                    dogAge.Add(int.Parse(line.Split(',')[2].Trim()));
+                    dogWeight.Add(int.Parse(line.Split(',')[3].Trim()));
+                    dogBirthdays.Add(DateOnly.Parse(line.Split(',')[4].Trim()));
+                    dogDesc.Add(line.Split(",")[5].Trim());
+                    dogImgPath.Add(line.Split(",")[6].Trim());
+
+
+
+                    /*
+                       for (int i = 0; i < 6; i++)
+                       {
+                       }
+                       MessageBox.Show(dogInfo.ToString());
+                    */
+
                     line = sr.ReadLine();
+
                 }
-                cbxDogSelection.ItemsSource = (dogList);
+
+                cbxDogSelection.ItemsSource = (dogNames);
                 sr.Close();
                 Console.ReadLine();
             }
@@ -65,7 +92,13 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
 
         private void cbxDogSelection_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            int indexed = cbxDogSelection.SelectedIndex;
+            txtDogName.Text = dogNames[indexed];
+            txtDogAge.Text = dogAge[indexed].ToString();
+            txtDogWeight.Text = dogWeight[indexed].ToString();
+            txtDogDesc.Text = dogDesc[indexed].ToString();
+            txtDogType.Text = dogTypes[indexed].ToString();
+            //imgDogProfile.Source = ImageSource(dogTypes[indexed]);
         }
 
         private void cbxDogSelection_GotFocus(object sender, RoutedEventArgs e)
