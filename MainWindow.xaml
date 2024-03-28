@@ -10,11 +10,20 @@
         <Grid.Background>
             <ImageBrush x:Name="imgbrushBackground" ImageSource="/Background.jpg" Opacity="0.3"/>
         </Grid.Background>
-        <Image x:Name="imgDogProfile" HorizontalAlignment="Left" Height="191" Margin="526,63,0,0" VerticalAlignment="Top" Width="239"/>
-        <TextBox x:Name="txtDogName" HorizontalAlignment="Left" Height="40" Margin="10,76,0,0" TextWrapping="Wrap" Text="Dog's Name" VerticalAlignment="Top" Width="204" FontSize="24" TextAlignment="Center" Focusable="False" FontFamily="Elephant" IsHitTestVisible="False" IsUndoEnabled="False"/>
-        <Button x:Name="btnExit" Content="Exit..." HorizontalAlignment="Left" Height="46" Margin="630,350,0,0" VerticalAlignment="Top" Width="130" Click="btnExit_Click"/>
-        <Button x:Name="btnAdopt" Content="Adopt..." HorizontalAlignment="Left" Height="46" Margin="448,350,0,0" VerticalAlignment="Top" Width="130" Click="btnAdopt_Click"/>
-        <Label x:Name="lblTitle" Content="       Dog Adoption" HorizontalAlignment="Left" Height="53" Margin="228,10,0,0" VerticalAlignment="Top" Width="350" FontSize="30"/>
+        <Image x:Name="imgDogProfile" HorizontalAlignment="Left" Height="180" Margin="23,87,0,0" VerticalAlignment="Top" Width="212"/>
+        <Button x:Name="btnExit" Content="Exit..." HorizontalAlignment="Left" Height="46" Margin="634,363,0,0" VerticalAlignment="Top" Width="130" Click="btnExit_Click"/>
+        <Button x:Name="btnAdopt" Content="Adopt..." HorizontalAlignment="Left" Height="46" Margin="452,363,0,0" VerticalAlignment="Top" Width="130" Click="btnAdopt_Click"/>
+        <Label x:Name="lblTitle" Content="       Dog Adoption" HorizontalAlignment="Left" Height="58" Margin="228,0,0,0" VerticalAlignment="Top" Width="350" FontSize="30" FontWeight="UltraBold" Foreground="#FF304275"/>
+        <Canvas HorizontalAlignment="Left" Height="261" Margin="304,0,0,0" VerticalAlignment="Center" Width="460">
+            <TextBox x:Name="txtDogName" Height="37" TextWrapping="Wrap" Text="Dog's Name" Width="204" FontSize="24" TextAlignment="Center" Focusable="False" FontFamily="Elephant" IsHitTestVisible="False" IsUndoEnabled="False" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtDogType" Height="38" TextWrapping="Wrap" Text="Dog's Type" Width="204" FontSize="24" TextAlignment="Center" Focusable="False" FontFamily="Elephant" IsHitTestVisible="False" IsUndoEnabled="False" HorizontalAlignment="Center" Canvas.Top="78" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtDogWeight" Height="38" TextWrapping="Wrap" Text="Dog's Weight" Width="204" FontSize="24" TextAlignment="Center" Focusable="False" FontFamily="Elephant" IsHitTestVisible="False" IsUndoEnabled="False" HorizontalAlignment="Center" Canvas.Top="151" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtDogAge" Height="40" TextWrapping="Wrap" Text="Dog's Age" Width="204" FontSize="24" TextAlignment="Center" Focusable="False" FontFamily="Elephant" IsHitTestVisible="False" IsUndoEnabled="False" HorizontalAlignment="Center" Canvas.Top="221" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtDogDesc" Height="261" TextWrapping="Wrap" Text="Dog's Description" Width="221" FontSize="20" TextAlignment="Center" Focusable="False" FontFamily="Elephant" IsHitTestVisible="False" IsUndoEnabled="False" HorizontalAlignment="Center" Canvas.Left="239" VerticalAlignment="Top"/>
+
+        </Canvas>
+        <ComboBox x:Name="cbxDogSelection" HorizontalAlignment="Left" Height="44" Margin="23,304,0,0" VerticalAlignment="Top" Width="211" SelectionChanged="cbxDogSelection_SelectionChanged" GotFocus="cbxDogSelection_GotFocus" FontSize="16"/>
+        <Label x:Name="lblInstruction" Content="Please Select a Dog:" HorizontalAlignment="Left" Height="33" Margin="23,271,0,0" VerticalAlignment="Top" Width="211" FontSize="18" FontWeight="SemiBold" Foreground="Black" Background="#FFB2B2B2"/>
 
     </Grid>
 </Window>
