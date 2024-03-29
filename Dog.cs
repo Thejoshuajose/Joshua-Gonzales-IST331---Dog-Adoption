@@ -14,6 +14,8 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
         protected string dogDescription;
         protected int dogAge;
         protected int dogWeight;
+        protected bool dogAdopted = false;
+
         public Dog() 
         {
             this.dogType = "A generic breed";
@@ -78,7 +80,11 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
             get { return dogWeight; }
             set { dogWeight = value; }
         }
-
+        public bool DogAdopted
+        {
+            get { return dogAdopted; }
+            set { dogAdopted = value; }
+        }
 
     }
 }

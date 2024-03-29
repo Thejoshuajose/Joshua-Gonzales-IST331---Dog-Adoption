@@ -47,7 +47,10 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
 
         private void btnAdopt_Click(object sender, RoutedEventArgs e)
         {
+            dogAdopted.DogAdopted = true;
+            
             MessageBox.Show(dogAdopted.DogName + " has been Adopted!");
+
             wnAdoptionPage.Close();
             
         }
