@@ -69,16 +69,6 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
                     imageSource.EndInit();
                     dogImgPath.Add(imageSource);
 
-
-
-
-                    /*
-                       for (int i = 0; i < 6; i++)
-                       {
-                       }
-                       MessageBox.Show(dogInfo.ToString());
-                    */
-
                     line = sr.ReadLine();
 
                 }
@@ -96,6 +86,7 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
                 Console.WriteLine("Executing final Stock.");
             }
         }
+
         private void btnAdopt_Click(object sender, RoutedEventArgs e)
         {
             int indexed = cbxDogSelection.SelectedIndex;
