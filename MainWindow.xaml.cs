@@ -24,12 +24,11 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
         List<int> dogWeight = new List<int>();
         List<DateOnly> dogBirthdays = new List<DateOnly>();
         List<string> dogDesc = new List<string>();
-        List<String> dogImgPath = new List<String>();
+        List<BitmapSource> dogImgPath = new List<BitmapSource>();
         
         public MainWindow()
         {
             InitializeComponent();
-            InitalizeDogs();
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
@@ -57,7 +56,14 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
                     dogWeight.Add(int.Parse(line.Split(',')[3].Trim()));
                     dogBirthdays.Add(DateOnly.Parse(line.Split(',')[4].Trim()));
                     dogDesc.Add(line.Split(",")[5].Trim());
-                    dogImgPath.Add(line.Split(",")[6].Trim());
+
+                    string imagePath = line.Split(",")[6].Trim();
+                    BitmapImage imageSource = new BitmapImage();
+                    imageSource.BeginInit();
+                    imageSource.UriSource = new Uri(imagePath, UriKind.RelativeOrAbsolute);
+                    imageSource.EndInit();
+                    dogImgPath.Add(imageSource);
+
 
 
 
@@ -87,23 +93,29 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
         }
         private void btnAdopt_Click(object sender, RoutedEventArgs e)
         {
-            
+            Window1 window1 = new Window1();
+            window1.ShowDialog();
+
+
         }
 
         private void cbxDogSelection_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int indexed = cbxDogSelection.SelectedIndex;
+
             txtDogName.Text = dogNames[indexed];
             txtDogAge.Text = dogAge[indexed].ToString();
             txtDogWeight.Text = dogWeight[indexed].ToString();
             txtDogDesc.Text = dogDesc[indexed].ToString();
             txtDogType.Text = dogTypes[indexed].ToString();
-            //imgDogProfile.Source = ImageSource(dogTypes[indexed]);
+            txtDogBirthday.Text = dogBirthdays[indexed].ToString();
+            imgDogProfile.Source = dogImgPath[indexed];
         }
 
         private void cbxDogSelection_GotFocus(object sender, RoutedEventArgs e)
         {
             InitalizeDogs();
+
         }
     }
 }

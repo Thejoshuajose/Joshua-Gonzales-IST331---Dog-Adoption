@@ -6,7 +6,22 @@
         xmlns:local="clr-namespace:Joshua_Gonzales___IST331___Dog_Adoption"
         mc:Ignorable="d"
         Title="Adoption Confirmation" Height="450" Width="800" ResizeMode="NoResize">
-    <Grid>
-        
+    <Grid x:Name="___No_Name_">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Background.jpg" Opacity="0.25"/>
+        </Grid.Background>
+        <Button x:Name="btnExitAC" Content="Exit..." HorizontalAlignment="Left" Height="46" Margin="634,363,0,0" VerticalAlignment="Top" Width="130" Click="btnExitAC_Click"/>
+        <Canvas HorizontalAlignment="Left" Height="319" Margin="304,0,0,0" VerticalAlignment="Center" Width="460">
+            <TextBox x:Name="txtDogNameAC" Height="37" TextWrapping="Wrap" Text="Dog's Name" Width="204" FontSize="24" TextAlignment="Center" Focusable="False" FontFamily="Elephant" IsHitTestVisible="False" IsUndoEnabled="False" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtDogTypeAC" Height="75" TextWrapping="Wrap" Text="Dog's Type" Width="204" FontSize="24" TextAlignment="Center" Focusable="False" FontFamily="Elephant" IsHitTestVisible="False" IsUndoEnabled="False" HorizontalAlignment="Center" Canvas.Top="53" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtDogWeightAC" Height="38" TextWrapping="Wrap" Text="Dog's Weight" Width="204" FontSize="24" TextAlignment="Center" Focusable="False" FontFamily="Elephant" IsHitTestVisible="False" IsUndoEnabled="False" HorizontalAlignment="Left" Canvas.Top="140" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtDogAgeAC" Height="40" TextWrapping="Wrap" Text="Dog's Age" Width="204" FontSize="24" TextAlignment="Center" Focusable="False" FontFamily="Elephant" IsHitTestVisible="False" IsUndoEnabled="False" HorizontalAlignment="Center" Canvas.Top="189" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtDogDescAC" Height="280" TextWrapping="Wrap" Text="Dog's Description" Width="221" FontSize="20" TextAlignment="Center" Focusable="False" FontFamily="Elephant" IsHitTestVisible="False" IsUndoEnabled="False" HorizontalAlignment="Center" Canvas.Left="239" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtDogBirthdayAC" Height="40" TextWrapping="Wrap" Text="Dog's Birthday" Width="204" FontSize="24" TextAlignment="Center" Focusable="False" FontFamily="Elephant" IsHitTestVisible="False" IsUndoEnabled="False" Canvas.Top="240" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        </Canvas>
+        <Image x:Name="imgDogProfileAC" HorizontalAlignment="Left" Height="180" Margin="34,58,0,0" VerticalAlignment="Top" Width="212"/>
+        <Button x:Name="btnAdoptAC" Content="Adopt..." HorizontalAlignment="Left" Height="46" Margin="34,363,0,0" VerticalAlignment="Top" Width="217" Click="btnAdopt_Click" FontSize="24" Focusable="False"/>
+
     </Grid>
 </Window>

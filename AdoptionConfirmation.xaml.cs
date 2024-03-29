@@ -23,5 +23,18 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
         {
             InitializeComponent();
         }
+
+        private void btnExitAC_Click(object sender, RoutedEventArgs e)
+        {
+            wnAdoptionPage.Close();
+            
+        }
+
+        private void btnAdopt_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("has been Adopted!");
+            wnAdoptionPage.Close();
+
+        }
     }
 }

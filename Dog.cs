@@ -8,7 +8,7 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
 {
     class Dog
     {
-        protected DateOnly dogBirthday;
+        protected DateTime dogBirthday;
         protected string dogName;
         protected string dogType;
         protected string dogDescription;
@@ -20,11 +20,11 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
             this.dogDescription = "A generic Dog";
             this.dogAge = 1;
             this.dogWeight = 20;
-            this.dogBirthday = DateOnly.MaxValue;
+            this.dogBirthday = DateTime.MaxValue;
             this.dogName = "Dog";
         }
 
-        public Dog(DateOnly dogBirthday,string dogName, string dogType, string dogDescription, int dogAge, int dogWeight)
+        public Dog(DateTime dogBirthday,string dogName, string dogType, string dogDescription, int dogAge, int dogWeight)
         {
             this.dogType = dogType;
             this.dogDescription = dogDescription;
@@ -34,9 +34,49 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
             this.dogName = dogName;
         }
 
-        public Dog(DateOnly dogBirthday, string dogName, string dogType,string dogDescription,int dogWeight)
+        public Dog(DateTime dogBirthday, string dogName, string dogType,string dogDescription,int dogWeight)
         {
-             
+            this.dogBirthday = dogBirthday;
+            this.dogName = dogName;
+            this.dogDescription = dogDescription;
+            this.dogType = dogType;
+            this.dogWeight = dogWeight;
+            this.dogAge =  (DateTime.Now - dogBirthday).Days/365 ;
+        }
+        public DateTime DogBirthday
+        {
+            get { return dogBirthday; }
+            set { dogBirthday = value; }
+        }
+
+        public string DogName
+        {
+            get { return dogName; }
+            set { dogName = value; }
+        }
+
+        public string DogType
+        {
+            get { return dogType; }
+            set { dogType = value; }
+        }
+
+        public string DogDescription
+        {
+            get { return dogDescription; }
+            set { dogDescription = value; }
+        }
+
+        public int DogAge
+        {
+            get { return dogAge; }
+            set { dogAge = value; }
+        }
+
+        public int DogWeight
+        {
+            get { return dogWeight; }
+            set { dogWeight = value; }
         }
 
 
