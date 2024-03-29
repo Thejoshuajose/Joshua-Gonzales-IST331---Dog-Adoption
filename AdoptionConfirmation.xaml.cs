@@ -19,9 +19,13 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
     /// </summary>
     public partial class Window1 : Window
     {
-        public Window1()
+        private Dog dogAdopted;
+        public Window1(Dog dogToBeAdopted)
         {
             InitializeComponent();
+            dogAdopted = dogToBeAdopted;
+            UpdateDog();
+
         }
 
         private void btnExitAC_Click(object sender, RoutedEventArgs e)
@@ -30,11 +34,22 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
             
         }
 
+        private void UpdateDog()
+        {
+            txtDogDescAC.Text = dogAdopted.DogDescription;
+            txtDogAgeAC.Text = dogAdopted.DogAge.ToString();
+            txtDogBirthdayAC.Text = dogAdopted.DogBirthday.ToString();
+            txtDogNameAC.Text = dogAdopted.DogName;
+            txtDogTypeAC.Text = dogAdopted.DogType;
+            txtDogWeightAC.Text = dogAdopted.DogWeight.ToString();
+
+        }
+
         private void btnAdopt_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("has been Adopted!");
             wnAdoptionPage.Close();
-
+            
         }
     }
 }

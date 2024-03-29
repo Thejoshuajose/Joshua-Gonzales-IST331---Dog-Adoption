@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Joshua_Gonzales___IST331___Dog_Adoption
 {
-    class Dog
+    public class Dog
     {
         protected DateTime dogBirthday;
         protected string dogName;
