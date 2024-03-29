@@ -34,6 +34,8 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
         public MainWindow()
         {
             InitializeComponent();
+            dogToBeAdopted.DogAdopted = false;
+
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
@@ -44,9 +46,24 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
                 Application.Current.Shutdown();
             }
         }
+        public void AdoptedCheck()
+        {
+            if (dogToBeAdopted.DogAdopted == true)
+            {
+                dogNames.Remove(dogToBeAdopted.DogName);
+                dogAge.Remove(dogToBeAdopted.DogAge);
+                dogBirthdays.Remove(dogToBeAdopted.DogBirthday);
+                dogDesc.Remove(dogToBeAdopted.DogDescription);
+                dogTypes.Remove(dogToBeAdopted.DogType);
+                dogWeight.Remove(dogToBeAdopted.DogWeight);
+            }
+            cbxDogSelection.ItemsSource = (dogNames);
+
+        }
 
         private void InitalizeDogs()
         {
+
             String line;
             try
             {
@@ -68,11 +85,9 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
                     imageSource.UriSource = new Uri(imagePath, UriKind.RelativeOrAbsolute);
                     imageSource.EndInit();
                     dogImgPath.Add(imageSource);
-
                     line = sr.ReadLine();
 
                 }
-
                 cbxDogSelection.ItemsSource = (dogNames);
                 sr.Close();
                 Console.ReadLine();
@@ -96,6 +111,7 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
             dogToBeAdopted.DogWeight = dogWeight[indexed];
             dogToBeAdopted.DogAge = dogAge[indexed];
             dogToBeAdopted.DogType = dogTypes[indexed];
+            dogToBeAdopted.DogAdopted = false;
             Window1 window1 = new Window1(dogToBeAdopted);
             window1.ShowDialog();
 
@@ -123,8 +139,15 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
 
         private void cbxDogSelection_GotFocus(object sender, RoutedEventArgs e)
         {
-            InitalizeDogs();
 
+            InitalizeDogs();
+            AdoptedCheck();
+
+
+        }
+
+        private void Grid_MouseMove(object sender, MouseEventArgs e)
+        {
         }
     }
 }

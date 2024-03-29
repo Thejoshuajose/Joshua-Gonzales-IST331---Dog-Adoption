@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Joshua_Gonzales___IST331___Dog_Adoption"
         mc:Ignorable="d"
         Title="Gonzales_DogAdoption" Height="450" Width="800" ResizeMode="NoResize">
-    <Grid>
+    <Grid MouseMove="Grid_MouseMove">
         <Grid.Background>
             <ImageBrush x:Name="imgbrushBackground" ImageSource="/Background.jpg" Opacity="0.3"/>
         </Grid.Background>
