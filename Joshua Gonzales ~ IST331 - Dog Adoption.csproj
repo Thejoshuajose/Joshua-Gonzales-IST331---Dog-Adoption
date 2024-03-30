@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <Resource Include="Background.jpg" />
-    <Resource Include="FidoGermanShepard.jpg" />
   </ItemGroup>
 
 </Project>

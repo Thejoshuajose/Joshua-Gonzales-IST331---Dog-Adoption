@@ -20,7 +20,7 @@
             <TextBox x:Name="txtDogBirthdayAC" Height="40" TextWrapping="Wrap" Text="Dog's Birthday" Width="204" FontSize="24" TextAlignment="Center" Focusable="False" FontFamily="Elephant" IsHitTestVisible="False" IsUndoEnabled="False" Canvas.Top="240" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
         </Canvas>
-        <Image x:Name="imgDogProfileAC" HorizontalAlignment="Left" Height="180" Margin="34,58,0,0" VerticalAlignment="Top" Width="212"/>
+        <Image x:Name="imgDogProfileAC" HorizontalAlignment="Left" Height="180" Margin="34,58,0,0" VerticalAlignment="Top" Width="212" Source="/Background.jpg" Stretch="UniformToFill"/>
         <Button x:Name="btnAdoptAC" Content="Adopt..." HorizontalAlignment="Left" Height="46" Margin="34,363,0,0" VerticalAlignment="Top" Width="217" Click="btnAdopt_Click" FontSize="24" Focusable="False"/>
 
     </Grid>
