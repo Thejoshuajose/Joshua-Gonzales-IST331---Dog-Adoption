@@ -21,6 +21,7 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
         List<int> dogWeight = new List<int>();
         List<DateTime> dogBirthdays = new List<DateTime>();
         List<string> dogDesc = new List<string>();
+        List<string> mt = new List<string>();
         List<BitmapSource> dogImgPath = new List<BitmapSource>();
         Dog dogToBeAdopted = new Dog();
 
@@ -28,6 +29,7 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
         {
             InitializeComponent();
             dogToBeAdopted.DogAdopted = false;
+            InitalizeDogs();
 
         }
 
@@ -39,20 +41,33 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
                 Application.Current.Shutdown();
             }
         }
+
+
         public void AdoptedCheck()
         {
             if (dogToBeAdopted.DogAdopted == true)
             {
+
                 dogNames.Remove(dogToBeAdopted.DogName);
                 dogAge.Remove(dogToBeAdopted.DogAge);
                 dogBirthdays.Remove(dogToBeAdopted.DogBirthday);
                 dogDesc.Remove(dogToBeAdopted.DogDescription);
                 dogTypes.Remove(dogToBeAdopted.DogType);
                 dogWeight.Remove(dogToBeAdopted.DogWeight);
+                RefreshDog(dogNames);
             }
-            cbxDogSelection.ItemsSource = (dogNames);
+
+
+
 
         }
+        public void RefreshDog(List<string> list)
+        {
+            cbxDogSelection.ItemsSource = null;
+
+            cbxDogSelection.ItemsSource = list;
+        }
+
 
         private void InitalizeDogs()
         {
@@ -81,7 +96,7 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
                     line = sr.ReadLine();
 
                 }
-                cbxDogSelection.ItemsSource = (dogNames);
+                cbxDogSelection.ItemsSource = dogNames;
                 sr.Close();
                 Console.ReadLine();
             }
@@ -107,6 +122,7 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
             dogToBeAdopted.DogAdopted = false;
             Window1 window1 = new Window1(dogToBeAdopted);
             window1.ShowDialog();
+            
 
 
         }
@@ -128,19 +144,20 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
             dogToBeAdopted.DogWeight = dogWeight[indexed];
             dogToBeAdopted.DogAge = dogAge[indexed];
             dogToBeAdopted.DogType = dogTypes[indexed];
+            
+            
         }
 
         private void cbxDogSelection_GotFocus(object sender, RoutedEventArgs e)
         {
-
-            InitalizeDogs();
-            AdoptedCheck();
 
 
         }
 
         private void Grid_MouseMove(object sender, MouseEventArgs e)
         {
+            AdoptedCheck();
+
         }
     }
 }
