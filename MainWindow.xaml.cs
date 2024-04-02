@@ -94,13 +94,14 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
                     dogGender.Add(line.Split('~')[7].Trim());
                     dogHasShot.Add(line.Split('~')[8].Trim());
                     dogMonthsInKennel.Add(line.Split('~')[9].Trim());
-                    string imagePath = line.Split('~')[10].Trim();
+                    string imagePath = line.Split('~')[10];
 
                     BitmapImage imageSource = new BitmapImage();
                     imageSource.BeginInit();
                     imageSource.UriSource = new Uri(imagePath, UriKind.Relative);
                     imageSource.EndInit();
                     dogImgPath.Add(imageSource);
+
 
                     line = sr.ReadLine();
 
@@ -131,6 +132,7 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
             dogToBeAdopted.DogHasShots = dogHasShot[indexed];
             dogToBeAdopted.DogGender = dogGender[indexed];
             dogToBeAdopted.DogMonthsInKennel = dogMonthsInKennel[indexed];
+            dogToBeAdopted.DogImage = dogImgPath[indexed].ToString();
 
             dogToBeAdopted.DogAdopted = false;
             Window1 window1 = new Window1(dogToBeAdopted);
