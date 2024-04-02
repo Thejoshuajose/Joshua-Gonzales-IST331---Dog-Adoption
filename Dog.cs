@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace Joshua_Gonzales___IST331___Dog_Adoption
 {
@@ -12,9 +14,15 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
         protected string dogName;
         protected string dogType;
         protected string dogDescription;
+        protected string dogColor;
         protected int dogAge;
+        protected string dogGender;
+        protected string dogMonthsInKennel;
         protected int dogWeight;
         protected bool dogAdopted = false;
+        protected string dogHasShots;
+        protected string dogImage;
+
 
         public Dog() 
         {
@@ -24,9 +32,13 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
             this.dogWeight = 20;
             this.dogBirthday = DateTime.MaxValue;
             this.dogName = "Dog";
+            this.dogColor = "Black";
+            this.dogGender = "Male";
+            this.dogMonthsInKennel = "Three";
+            this.dogImage = "/DogPictures/FidoGermanShephard";
         }
 
-        public Dog(DateTime dogBirthday,string dogName, string dogType, string dogDescription, int dogAge, int dogWeight)
+        public Dog(DateTime dogBirthday,string dogName, string dogType, string dogDescription, int dogAge, int dogWeight, string dogColor,string dogGender, string dogMonthsInKennel, string dogImage)
         {
             this.dogType = dogType;
             this.dogDescription = dogDescription;
@@ -34,17 +46,13 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
             this.dogWeight = dogWeight;
             this.dogBirthday = dogBirthday;
             this.dogName = dogName;
+            this.dogColor = dogColor;
+            this.dogGender = dogGender;
+            this.dogMonthsInKennel = dogMonthsInKennel;
+            this.dogImage = dogImage;
         }
 
-        public Dog(DateTime dogBirthday, string dogName, string dogType,string dogDescription,int dogWeight)
-        {
-            this.dogBirthday = dogBirthday;
-            this.dogName = dogName;
-            this.dogDescription = dogDescription;
-            this.dogType = dogType;
-            this.dogWeight = dogWeight;
-            this.dogAge =  (DateTime.Now - dogBirthday).Days/365 ;
-        }
+        
         public DateTime DogBirthday
         {
             get { return dogBirthday; }
@@ -85,6 +93,31 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
             get { return dogAdopted; }
             set { dogAdopted = value; }
         }
+        public string DogColor
+        {
+            get { return dogColor; }
+            set { dogColor = value; }
+        }
+        public string DogHasShots
+        {
+            get { return dogHasShots; }
+            set { dogHasShots = value; }
+        }
+        public string DogGender
+        {
+            get { return dogGender; }
+            set { dogGender = value; }
+        }
 
+        public string DogMonthsInKennel
+        {
+            get { return dogMonthsInKennel; }
+            set { dogMonthsInKennel = value; }
+        }
+        public string DogImage
+        {
+            get { return dogImage; }
+            set { dogImage = value; }
+        }
     }
 }

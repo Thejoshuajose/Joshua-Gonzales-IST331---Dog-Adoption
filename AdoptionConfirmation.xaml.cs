@@ -42,6 +42,11 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
             txtDogNameAC.Text = dogAdopted.DogName;
             txtDogTypeAC.Text = dogAdopted.DogType;
             txtDogWeightAC.Text = dogAdopted.DogWeight.ToString();
+            txtDogHasShotsAC.Text = dogAdopted.DogHasShots.ToString();
+            txtDogColorAC.Text = dogAdopted.DogColor.ToString();
+            txtDogMonthsInKennelAC.Text = dogAdopted.DogMonthsInKennel.ToString();
+            txtDogGenderAC.Text = dogAdopted.DogGender.ToString();
+
 
         }
 
