@@ -80,8 +80,8 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
             String line;
             try
             {
-                StreamReader sr = new StreamReader("DogInformation.txt");
-                line = sr.ReadLine();
+                StreamReader reader = new StreamReader("DogInformation.txt");
+                line = reader.ReadLine();
                 while (line != null)
                 {
                     dogNames.Add(line.Split('~')[0].Trim());
@@ -103,12 +103,12 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
                     dogImgPath.Add(imagePath);
 
 
-                    line = sr.ReadLine();
+                    line = reader.ReadLine();
 
                 }
                 cbxDogSelection.ItemsSource = dogNames;
 
-                sr.Close();
+                reader.Close();
             }
             catch (Exception e)
             {
