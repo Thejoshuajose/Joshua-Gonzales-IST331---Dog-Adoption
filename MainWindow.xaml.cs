@@ -27,7 +27,7 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
         List<DateTime> dogBirthdays = new List<DateTime>();
         List<string> dogDesc = new List<string>();
         List<string> mt = new List<string>();
-        List<ImageSource> dogImgPath = new List<ImageSource>();
+        List<string> dogImgPath = new List<string>();
         Dog dogToBeAdopted = new Dog();
 
         public MainWindow()
@@ -93,20 +93,21 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
                     dogColor.Add(line.Split('~')[6].Trim());
                     dogGender.Add(line.Split('~')[7].Trim());
                     dogHasShot.Add(line.Split('~')[8].Trim());
-                    dogMonthsInKennel.Add(line.Split('~')[9].Trim());
+                    dogMonthsInKennel.Add(line.Split('~')[9]);
                     string imagePath = line.Split('~')[10];
 
-                    BitmapImage imageSource = new BitmapImage();
+                    /*BitmapImage imageSource = new BitmapImage();
                     imageSource.BeginInit();
                     imageSource.UriSource = new Uri(imagePath, UriKind.Relative);
-                    imageSource.EndInit();
-                    dogImgPath.Add(imageSource);
+                    imageSource.EndInit();*/
+                    dogImgPath.Add(imagePath);
 
 
                     line = sr.ReadLine();
 
                 }
                 cbxDogSelection.ItemsSource = dogNames;
+
                 sr.Close();
             }
             catch (Exception e)
@@ -137,7 +138,7 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
             dogToBeAdopted.DogAdopted = false;
             Window1 window1 = new Window1(dogToBeAdopted);
             window1.ShowDialog();
-            
+
 
 
         }
@@ -145,6 +146,7 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
         private void cbxDogSelection_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int indexed = cbxDogSelection.SelectedIndex;
+
 
             txtDogName.Text = dogNames[indexed];
             txtDogAge.Text = dogAge[indexed].ToString() + " Years Old";
@@ -156,7 +158,6 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
             txtDogHasShots.Text = dogHasShot[indexed].ToString();
             txtDogMonthsInKennel.Text = dogMonthsInKennel[indexed].ToString() + " Months";
             txtDogGender.Text = dogGender[indexed].ToString();
-            imgDogProfile.Source = dogImgPath[indexed];
             dogToBeAdopted.DogBirthday = dogBirthdays[indexed];
             dogToBeAdopted.DogName = dogNames[indexed];
             dogToBeAdopted.DogDescription = dogDesc[indexed];
