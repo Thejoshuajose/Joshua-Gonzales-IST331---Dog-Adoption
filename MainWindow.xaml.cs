@@ -147,6 +147,7 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
         {
             int indexed = cbxDogSelection.SelectedIndex;
 
+           // imgDogProfile.Source = new BitmapImage(new Uri("DogPictures/FidoGermanShephard.jpg"));
 
             txtDogName.Text = dogNames[indexed];
             txtDogAge.Text = dogAge[indexed].ToString() + " Years Old";
