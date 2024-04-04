@@ -48,7 +48,9 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
         }
 
 
-       /* public void AdoptedCheck()
+       /* Method for Deleting dog after adoption... Unfinished 
+        * 
+        * public void AdoptedCheck()
         {
             if (dogToBeAdopted.DogAdopted == true)
             {
@@ -95,11 +97,6 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
                     dogHasShot.Add(line.Split('~')[8].Trim());
                     dogMonthsInKennel.Add(line.Split('~')[9]);
                     string imagePath = line.Split('~')[10];
-
-                    /*BitmapImage imageSource = new BitmapImage();
-                    imageSource.BeginInit();
-                    imageSource.UriSource = new Uri(imagePath, UriKind.Relative);
-                    imageSource.EndInit();*/
                     dogImgPath.Add(imagePath);
 
 
@@ -147,7 +144,6 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
         {
             int indexed = cbxDogSelection.SelectedIndex;
 
-           // imgDogProfile.Source = new BitmapImage(new Uri("DogPictures/FidoGermanShephard.jpg"));
 
             txtDogName.Text = dogNames[indexed];
             txtDogAge.Text = dogAge[indexed].ToString() + " Years Old";
@@ -169,20 +165,24 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
             dogToBeAdopted.DogColor = dogColor[indexed];
             dogToBeAdopted.DogGender = dogGender[indexed];
             dogToBeAdopted.DogMonthsInKennel = dogMonthsInKennel[indexed];
+            dogToBeAdopted.DogImage = dogImgPath[indexed];
 
+            //imgDogProfile.Source = new BitmapImage(new Uri(dogImgPath[indexed]));
 
 
         }
 
         private void cbxDogSelection_GotFocus(object sender, RoutedEventArgs e)
         {
+            //AdoptedCheck(); //For the Adoption deletion method (Unused and Unfinished)
+
             cbxDogSelection.ItemsSource = dogNames;
+
 
         }
 
         private void Grid_MouseMove(object sender, MouseEventArgs e)
         {
-           // AdoptedCheck();
 
         }
     }
