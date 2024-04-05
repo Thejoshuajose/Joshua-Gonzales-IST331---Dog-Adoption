@@ -15,7 +15,6 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
 
     public partial class MainWindow : Window
     {
-        List<Dog> dogList = new List<Dog>();
         List<string> dogNames = new List<string>();
         List<string> dogTypes = new List<string>();
         List<string> dogColor = new List<string>();
@@ -95,8 +94,8 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
                     dogColor.Add(line.Split('~')[6].Trim());
                     dogGender.Add(line.Split('~')[7].Trim());
                     dogHasShot.Add(line.Split('~')[8].Trim());
-                    dogMonthsInKennel.Add(line.Split('~')[9]);
-                    string imagePath = line.Split('~')[10];
+                    dogMonthsInKennel.Add(line.Split('~')[9].Trim());
+                    string imagePath = line.Split('~')[10].Trim();
                     dogImgPath.Add(imagePath);
 
 
@@ -167,6 +166,12 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
             dogToBeAdopted.DogMonthsInKennel = dogMonthsInKennel[indexed];
             dogToBeAdopted.DogImage = dogImgPath[indexed];
 
+            BitmapImage dogBitImg = new BitmapImage();
+            dogBitImg.BeginInit();
+            dogBitImg.UriSource = new Uri(dogImgPath[indexed], UriKind.Relative);
+            dogBitImg.EndInit();
+            imgDogProfile.Stretch = Stretch.UniformToFill;
+            imgDogProfile.Source = dogBitImg;
             //imgDogProfile.Source = new BitmapImage(new Uri(dogImgPath[indexed]));
 
 

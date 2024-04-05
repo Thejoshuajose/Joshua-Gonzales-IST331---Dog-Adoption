@@ -46,7 +46,12 @@ namespace Joshua_Gonzales___IST331___Dog_Adoption
             txtDogColorAC.Text = dogAdopted.DogColor.ToString();
             txtDogMonthsInKennelAC.Text = dogAdopted.DogMonthsInKennel.ToString();
             txtDogGenderAC.Text = dogAdopted.DogGender.ToString();
-            //imgDogProfileAC.Source = new BitmapImage(new Uri(dogAdopted.DogImage));
+            BitmapImage dogBitImg = new BitmapImage();
+            dogBitImg.BeginInit();
+            dogBitImg.UriSource = new Uri(dogAdopted.DogImage, UriKind.Relative);
+            dogBitImg.EndInit();
+            imgDogProfileAC.Stretch = Stretch.UniformToFill;
+            imgDogProfileAC.Source = dogBitImg;
 
 
         }

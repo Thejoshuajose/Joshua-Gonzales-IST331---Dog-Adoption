@@ -11,11 +11,23 @@
 
   <ItemGroup>
     <None Remove="Background.jpg" />
+    <None Remove="DogPictures\FidoGermanShepard.jpg" />
+    <None Remove="DogPictures\JosephLabradorRetriever.jpg" />
+    <None Remove="DogPictures\LuffyChihuahua.jpg" />
+    <None Remove="DogPictures\MaxPoodle.jpg" />
+    <None Remove="DogPictures\RobinPitbull.jpg" />
+    <None Remove="DogPictures\ZoroBulldog.jpg" />
     <None Remove="FidoGermanShepard.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Background.jpg" />
+    <Resource Include="DogPictures\FidoGermanShepard.jpg" />
+    <Resource Include="DogPictures\JosephLabradorRetriever.jpg" />
+    <Resource Include="DogPictures\LuffyChihuahua.jpg" />
+    <Resource Include="DogPictures\MaxPoodle.jpg" />
+    <Resource Include="DogPictures\RobinPitbull.jpg" />
+    <Resource Include="DogPictures\ZoroBulldog.jpg" />
   </ItemGroup>
 
 </Project>
